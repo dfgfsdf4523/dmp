@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Воины-интернационалисты Столинщины</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="info-page">
+        <div class="content-wrapper">
+            <h1>Героям-интернационалистам посвящается</h1>
+            <p>Интерактивный плакат о мужестве, чести и памяти уроженцев Столинского района, исполнявших интернациональный долг в Афганистане.</p>
+            <button id="go-to-space">Перейти к плакату</button>
+        </div>
+    </section>
+
+    <div id="space-container" class="hidden">
+        <div id="memorial-center">
+            <img src="img/memorial.png" alt="Мемориал">
+        </div>
+
+        <div class="nav-item" id="item-prizyv" data-title="Призыв" 
+             data-info="С первых дней Великой Отечественной войны молодые ребята из Столина и Столинского района направлялись в военные учебные центры.<ul><li><strong>Призывной пункт:</strong> Столинский районный военный комиссариат.</li><li><strong>Факт:</strong> Многие земляки прошли через горнило войны, встали на защиту своей Родины.</li></ul>">
+            <img src="img/prizyv.png" alt="Призыв">
+            <span class="label">ПРИЗЫВ</span>
+        </div>
+
+        <div class="nav-item" id="item-salang" data-title="Слава" 
+             data-info="На территории района немало мест, связанных с воинской славой и памятью о погибших.<ul><li><strong>Братская могила:</strong> место захоронения более 170 солдат на площади Ленина в г. Столине.</li><li><strong>Мемориал:</strong> памятный знак на ул. Гагарина в честь тех, кто выполнял долг за пределами Родины.</li></ul>">
+            <img src="img/salang.png" alt="Слава">
+            <span class="label">СЛАВА</span>
+        </div>
+
+        <div class="nav-item" id="item-nagrada" data-title="Мужество" 
+             data-info="Юрий Савич — пример верности воинскому долгу и истинного мужества.<ul><li><strong>Награда:</strong> Дважды награждён орденом Красной Звезды за отвагу.</li><li><strong>Подвиг:</strong> Исключительная храбрость в бою и достойный пример служения Отчизне.</li></ul>">
+            <img src="img/nagrada.png" alt="Мужество">
+            <span class="label">МУЖЕСТВО</span>
+        </div>
+
+        <div class="nav-item" id="item-pamyat" data-title="Память" 
+             data-info="Мы помним каждого. Память о невернувшихся сыновьях навсегда останется в истории района.<ul><li><strong>Дата:</strong> 15 февраля — День памяти воинов-интернационалистов.</li><li><strong>Событие:</strong> Ежегодный митинг-реквием и возложение цветов к памятникам.</li></ul>">
+            <img src="img/pamyat.png" alt="Память">
+            <span class="label">ПАМЯТЬ</span>
+        </div>
+
+        <div class="nav-item" id="item-svyaz" data-title="Связь" 
+             data-info="Письма домой были единственной нитью, связывавшей солдат с родными.<ul><li><strong>Символ:</strong> Солдатский треугольник — форма фронтового письма, приносившая надежду.</li><li><strong>Факт:</strong> Почта работала даже в самых суровых боевых условиях.</li></ul>">
+            <img src="img/pismo.png" alt="Связь">
+            <span class="label">СВЯЗЬ</span>
+        </div>
+
+        <div class="nav-item" id="item-quest" data-is-quiz="true">
+            <img src="img/quest.png" alt="Квиз">
+            <span class="label">КВИЗ</span>
+        </div>
+    </div>
+
+    <div id="info-modal" class="hidden-modal">
+        <h2 id="modal-title"></h2>
+        <div id="modal-desc"></div>
+        <button id="close-btn">Вернуться к обзору</button>
+    </div>
+
+    <div id="quiz-modal" class="quiz-overlay hidden">
+        <div class="quiz-content">
+            <h2 id="quiz-question">Вопрос</h2>
+            <div id="quiz-options" class="quiz-grid"></div>
+            <button id="quiz-next-btn" class="hidden">Далее</button>
+            <button id="quiz-close-btn">Выйти</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

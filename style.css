@@ -1,0 +1,79 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0b0c10; color: white; font-family: 'Segoe UI', sans-serif; overflow: hidden; }
+
+/* Стартовая страница */
+#info-page {
+    width: 100%; min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img/afgan-bg.jpg') center/cover;
+    display: flex; justify-content: center; align-items: center;
+}
+.content-wrapper {
+    max-width: 800px; text-align: center; background: rgba(31, 40, 51, 0.95);
+    padding: 50px; border-radius: 15px; border: 1px solid #d4af37;
+}
+#info-page h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 20px; }
+#info-page p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; color: #c5c6c7; }
+#go-to-space {
+    padding: 15px 35px; font-size: 1.1rem; background: #d4af37; border: none;
+    cursor: pointer; font-weight: bold; border-radius: 5px; transition: 0.3s;
+}
+#go-to-space:hover { background: #f1d592; transform: translateY(-3px); }
+
+/* Плакат */
+#space-container { position: fixed; inset: 0; background: url('img/afgan-bg.jpg') center/cover; }
+
+/* Увеличенный памятник */
+#memorial-center {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px; z-index: 1;
+}
+#memorial-center img { width: 100%; filter: drop-shadow(0 0 20px rgba(0,0,0,0.5)); }
+
+/* Иконки и эффект наведения */
+.nav-item {
+    position: absolute; display: flex; flex-direction: column; align-items: center;
+    cursor: pointer; z-index: 10; transition: transform 0.3s ease;
+}
+.nav-item img { width: 100px; height: auto; }
+.nav-item:hover { transform: scale(1.2); z-index: 100; }
+.nav-item:hover img { filter: drop-shadow(0 0 15px #d4af37); }
+
+.label {
+    margin-top: 10px; font-weight: bold; color: #d4af37; font-size: 0.9rem;
+    text-shadow: 2px 2px 4px black; background: rgba(0,0,0,0.6); padding: 2px 10px; border-radius: 4px;
+}
+
+/* Расположение */
+#item-prizyv { top: 20%; left: 15%; }
+#item-salang { top: 15%; right: 15%; }
+#item-nagrada { bottom: 25%; left: 15%; }
+#item-pamyat { top: 45%; right: 10%; }
+#item-svyaz { bottom: 15%; right: 20%; }
+#item-quest { top: 10%; left: 50%; transform: translateX(-50%); }
+
+/* Модалки */
+.hidden-modal { display: none; }
+#info-modal {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 500px; background: #1a1a2e; padding: 40px; border: 2px solid #d4af37;
+    border-radius: 15px; z-index: 1000;
+}
+
+/* Кнопка закрытия */
+#close-btn, #quiz-next-btn, #quiz-close-btn {
+    background: #d4af37; color: #0b0c10; border: none; padding: 12px 25px;
+    margin-top: 25px; cursor: pointer; font-weight: bold; border-radius: 5px;
+    transition: 0.3s; text-transform: uppercase; width: 100%;
+}
+#close-btn:hover { background: #f1d592; box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+
+/* Сетка Квиза 2x2 */
+.quiz-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 2000; display: flex; justify-content: center; align-items: center; }
+.quiz-content { background: #1a1a2e; padding: 30px; border-radius: 15px; border: 1px solid #d4af37; width: 450px; text-align: center; }
+.quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+.quiz-opt { padding: 15px; background: #16213e; border: 1px solid #d4af37; color: white; cursor: pointer; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+.quiz-opt.correct { background: #2e7d32 !important; }
+.quiz-opt.wrong { background: #c62828 !important; }
+
+.hidden { display: none !important; }
