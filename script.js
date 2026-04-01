@@ -3,13 +3,11 @@ const items = document.querySelectorAll('.nav-item');
 const infoModal = document.getElementById('info-modal');
 const closeBtn = document.getElementById('close-btn');
 
-// Навигация
 goToSpaceBtn.addEventListener('click', () => {
     document.getElementById('info-page').classList.add('hidden');
     document.getElementById('space-container').classList.remove('hidden');
 });
 
-// Клики по объектам
 items.forEach(item => {
     item.addEventListener('click', () => {
         if (item.dataset.isQuiz) {
@@ -24,20 +22,19 @@ items.forEach(item => {
 
 closeBtn.addEventListener('click', () => infoModal.classList.add('hidden-modal'));
 
-// Логика Квиза
+// Обновленные вопросы
 const questions = [
-    { q: "Сколько столинцев не вернулись с Афганской войны?", a: ["21", "5", "13", "10"], c: 2 },
-    { q: "Какую награду имел столинец Юрий Савич (дважды)?", a: ["Орден Ленина", "Медаль «За отвагу»", "Орден Красной Звезды", "Герой СССР"], c: 2 },
-    { q: "Как назывался основной перевал, через который шли колонны?", a: ["Шибар", "Болан", "Саланг", "Хайбер"], c: 2 },
-    { q: "В каком году началась Афганская война для СССР?", a: ["1983", "1975", "1989", "1979"], c: 3 }
+    { q: "В какой деревне родился Владимир Карпович?", a: ["Речица", "Верхний Теребежов", "Столин", "Давид-Городок"], c: 1 },
+    { q: "Какую награду получил Владимир в марте 1986 года?", a: ["Орден Ленина", "Медаль «За отвагу»", "Золотая звезда", "Медаль «За заслуги»"], c: 1 },
+    { q: "Сколько воинов-афганцев живет на Столинщине?", a: ["50", "120", "190", "250"], c: 2 },
+    { q: "С какого года Владимир Карпович возглавляет Союз ветеранов?", a: ["1984", "1991", "2000", "1989"], c: 1 }
 ];
 
 let curQ = 0;
 let score = 0;
 
 function startQuiz() {
-    curQ = 0;
-    score = 0;
+    curQ = 0; score = 0;
     document.getElementById('quiz-modal').classList.remove('hidden');
     showQ();
 }
